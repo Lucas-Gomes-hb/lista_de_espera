@@ -6,8 +6,6 @@ import 'package:fila_espera/services/database_services.dart';
 import 'package:flutter/material.dart';
 
 class ReserveBuilder extends StatelessWidget {
-  const ReserveBuilder({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(

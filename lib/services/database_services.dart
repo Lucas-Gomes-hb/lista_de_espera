@@ -56,7 +56,7 @@ class DatabaseServices {
   }
 
   static Stream<QuerySnapshot> listUsers() {
-    Query ref = _userId;
+    Query ref = _userId.orderBy("UserID", descending: true);
 
     return ref.snapshots();
   }
