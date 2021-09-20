@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "596497496800",
+    "project_id": "fila-de-espera-14b1a",
+    "storage_bucket": "fila-de-espera-14b1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596497496800:android:f9a44e14b66c196edf6e85",
+        "android_client_info": {
+          "package_name": "br.com.lucasgomes.fila_espera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596497496800-lcj1mhi7k4hnedsoo4cf58mpvpkcadbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA0PK8r8lvt3B_PEz018_sw9YPVUxBGVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596497496800-lcj1mhi7k4hnedsoo4cf58mpvpkcadbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
