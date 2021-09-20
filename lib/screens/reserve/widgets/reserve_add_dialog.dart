@@ -1,6 +1,7 @@
 import 'package:fila_espera/model/clientHour.dart';
 import 'package:fila_espera/services/database_services.dart';
 import 'package:flutter/material.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class ReserveAddDialog extends StatelessWidget {
   final name = TextEditingController();
@@ -28,6 +29,7 @@ class ReserveAddDialog extends StatelessWidget {
           IconButton(
             onPressed: () {
               Navigator.pop(context);
+              // print();
             },
             icon: Icon(Icons.clear_rounded),
             color: Colors.white,
@@ -89,6 +91,13 @@ class ReserveAddDialog extends StatelessWidget {
                 cellphone.text,
                 numberOfPeople.text,
                 ClientHour.getHour(),
+              );
+              OneSignal.shared.postNotification(
+                OSCreateNotification(
+                  playerIds: ["792dd6a3-70f3-46da-9a37-f430325fbb22"],
+                  content: "Nova reserva para o cliente " + name.text,
+                  heading: "Nova Reserva",
+                ),
               );
               Navigator.pop(context);
             }

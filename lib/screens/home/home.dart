@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
   @override
   build(BuildContext context) {
     OneSignal.shared.setAppId('8bbe282c-f041-4053-b802-95389f80cdc1');
+
     return FutureBuilder(
         future: _initialFirebase(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
