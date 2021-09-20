@@ -1,12 +1,15 @@
 import 'package:fila_espera/model/clientHour.dart';
 import 'package:fila_espera/services/database_services.dart';
 import 'package:flutter/material.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class ReserveAddDialog extends StatelessWidget {
   final name = TextEditingController();
   final cellphone = TextEditingController();
   final numberOfPeople = TextEditingController();
+
+  final List<String> userIds;
+
+  ReserveAddDialog({required this.userIds});
 
   @override
   Widget build(BuildContext context) {
@@ -92,13 +95,14 @@ class ReserveAddDialog extends StatelessWidget {
                 numberOfPeople.text,
                 ClientHour.getHour(),
               );
-              OneSignal.shared.postNotification(
-                OSCreateNotification(
-                  playerIds: ["792dd6a3-70f3-46da-9a37-f430325fbb22"],
-                  content: "Nova reserva para o cliente " + name.text,
-                  heading: "Nova Reserva",
-                ),
-              );
+
+              // await OneSignal.shared.postNotification(
+              //   OSCreateNotification(
+              //     playerIds: userIds,
+              //     content: "Nova reserva para o cliente " + name.text,
+              //     heading: "Nova Reserva",
+              //   ),
+              // );
               Navigator.pop(context);
             }
           },

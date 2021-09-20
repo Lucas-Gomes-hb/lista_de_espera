@@ -3,6 +3,7 @@ import 'package:fila_espera/model/clientHour.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 final CollectionReference _mainCollection = _firestore.collection("Clientes");
+final CollectionReference _userId = _firestore.collection("Users");
 
 class DatabaseServices {
 //CRUD do firebase
@@ -19,6 +20,13 @@ class DatabaseServices {
       "numberOfPeople": numberOfPeople,
       "hour": hour,
       "id": ClientHour.getTimeMist(),
+    });
+  }
+
+  static Future setNewPhoneId(String userId) async {
+    DocumentReference ref = _userId.doc();
+    await ref.set({
+      "UserID": userId,
     });
   }
 
@@ -43,6 +51,12 @@ class DatabaseServices {
 
   static Stream<QuerySnapshot> listClients() {
     Query ref = _mainCollection.orderBy("id", descending: false);
+
+    return ref.snapshots();
+  }
+
+  static Stream<QuerySnapshot> listUsers() {
+    Query ref = _userId;
 
     return ref.snapshots();
   }
